@@ -37,7 +37,7 @@ study-sandwich/
 ├── app.py              # Main landing page
 ├── pages/
 │   ├── quiz.py        # File upload & settings
-│   └── test.py        # Quiz generation & evaluation
+│   └── result.py        # Quiz generation & evaluation
 │
 └── README.md
 
