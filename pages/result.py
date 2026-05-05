@@ -126,7 +126,7 @@ if st.button("Submit Quiz 🥪"):
         Question: {sq['question']}
         Expected answer: {sq['answer']}
         User's answer: {user_ans}
-        Reply only: CORRECT or INCORRECT and one sentence why.
+        Reply only: CORRECT or INCORRECT or Blank and one sentence why and if user's does not gave answer reply U Don't gave answer.
         """
         check_response = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
@@ -136,8 +136,11 @@ if st.button("Submit Quiz 🥪"):
         if "CORRECT" in feedback.upper():
             st.success(f"Q{i+1}: ✅ {feedback}")
             score += 1
+        if "Blank" in feedback.upper():
+            st.error(f"Q{i+1}:❌{feedback}")  
         else:
             st.error(f"Q{i+1}: ❌ {feedback}")
+
     
     # final score
     st.markdown("---")
