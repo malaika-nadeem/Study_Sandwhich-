@@ -6,7 +6,51 @@ import google.generativeai as genai
 import io
 
 st.set_page_config(page_title="studysandwhich", page_icon="🥪")
+st.markdown("""
+<style>
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    background-color: #FDF6EC !important;
+}
 
+.stButton button {
+    background-color: #A0522D;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.bubble {
+    position: fixed;
+    font-size: 30px;
+    animation: float linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.b1 { left: 5%;  animation-duration: 6s;  animation-delay: 0s;  }
+.b2 { left: 15%; animation-duration: 8s;  animation-delay: 1s;  }
+.b3 { left: 30%; animation-duration: 7s;  animation-delay: 2s;  }
+.b4 { left: 45%; animation-duration: 9s;  animation-delay: 0.5s;}
+.b5 { left: 60%; animation-duration: 6s;  animation-delay: 3s;  }
+.b6 { left: 75%; animation-duration: 8s;  animation-delay: 1.5s;}
+.b7 { left: 88%; animation-duration: 7s;  animation-delay: 2.5s;}
+</style>
+
+<div class="bubble b1">🧋</div>
+<div class="bubble b2">🥪</div>
+<div class="bubble b3">🧋</div>
+<div class="bubble b4">🥪</div>
+<div class="bubble b5">🧋</div>
+<div class="bubble b6">🥪</div>
+<div class="bubble b7">🧋</div>
+""", unsafe_allow_html=True)
 st.markdown("""<style>
 .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
     background-color: #FDF6EC !important;
@@ -77,4 +121,3 @@ if uploaded_file is not None:
      st.session_state["num_mcq"] = mcq
      st.session_state["num_short"] = short
      st.switch_page("pages/test.py")
-
