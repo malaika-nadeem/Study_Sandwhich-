@@ -85,8 +85,8 @@ if uploaded_file is not None:
     page_start = st.number_input("Start-page", min_value=0, value=0)
     page_end = st.number_input("End-page", min_value=1, value=10)
     st.markdown("*Please select how many MCQ'S and ShortQuestion u want to generate🥪📖*")
-    mcq=st.slider("Number of MCQs", 1, 10, 5)
-    short=st.slider("Number of Short Question", 1, 10, 5)
+    mcq=st.slider("Number of MCQs", 1, 10)
+    short=st.slider("Number of Short Question", 1, 10)
     
     e_name = uploaded_file.name
     file_extension = e_name.split(".")[-1].lower()
